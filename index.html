@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#fff7f0" />
+  <meta name="description" content="Bake What You Feel. Discover cozy baking recipes based on your mood and the ingredients you have." />
+  <title>Bake Your Mood — Bake What You Feel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="announcement">A little sweetness for whatever you're feeling today ✿</div>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Bake Your Mood home">
+      <span class="brand-icon">♡</span>
+      <span>Bake Your <em>Mood</em></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <nav class="nav-links" id="navLinks">
+      <a href="#how-it-works">How it works</a>
+      <a href="#mood-finder">Find your mood</a>
+      <a href="#recipes">Recipes</a>
+      <a href="#about">Our little story</a>
+    </nav>
+    <a class="header-cta" href="#mood-finder">Let's bake <span>↗</span></a>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="sparkle">✳</span> YOUR MOOD, YOUR RECIPE</div>
+        <h1>Some days call<br>for a little <em>something</em><br><span class="underlined">sweet.</span></h1>
+        <p class="hero-description">A happy dance, a slow day, or a heart that needs a hug. Find a recipe that meets you where you are — one delicious bite at a time.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#mood-finder">Find my baking mood <span>→</span></a>
+          <a class="text-link" href="#recipes">Explore recipes <span>↘</span></a>
+        </div>
+        <div class="hero-note"><span class="avatar-stack"><i>🍓</i><i>🍪</i><i>🧁</i></span><span><strong>A little comfort, freshly baked.</strong><br>Made for real-life moods.</span></div>
+      </div>
+      <div class="hero-art">
+        <div class="hero-image-wrap">
+          <img src="https://images.unsplash.com/photo-1486427944299-d1955d23e34d?auto=format&fit=crop&w=1100&q=85" alt="Pastel cupcakes with soft frosting" />
+          <div class="image-sticker sticker-top">made with<br><b>♡ love</b></div>
+          <div class="image-sticker sticker-bottom"><span>✦</span> Your daily<br>dose of cozy</div>
+        </div>
+        <div class="doodle doodle-one">✳</div><div class="doodle doodle-two">♡</div>
+      </div>
+    </section>
+
+    <section class="mood-section section-pad" id="mood-finder">
+      <div class="section-heading centered">
+        <div class="eyebrow">LET'S CHECK IN WITH YOU</div>
+        <h2>How are you <em>feeling</em> today?</h2>
+        <p>No wrong answers here. Pick the mood that feels most like you.</p>
+      </div>
+      <div class="mood-grid" role="group" aria-label="Choose your mood">
+        <button class="mood-card" data-mood="happy"><span class="mood-emoji">☀️</span><strong>Happy</strong><small>I'm feeling sunny</small></button>
+        <button class="mood-card" data-mood="sad"><span class="mood-emoji">🌧️</span><strong>A little blue</strong><small>I need some comfort</small></button>
+        <button class="mood-card" data-mood="lazy"><span class="mood-emoji">🧸</span><strong>Low energy</strong><small>Keep it easy, please</small></button>
+        <button class="mood-card" data-mood="cozy"><span class="mood-emoji">☕</span><strong>Cozy</strong><small>Slow and peaceful</small></button>
+        <button class="mood-card" data-mood="stressed"><span class="mood-emoji">🌿</span><strong>Stressed</strong><small>Time to unwind</small></button>
+        <button class="mood-card" data-mood="excited"><span class="mood-emoji">🎉</span><strong>Excited</strong><small>Let's make a little magic</small></button>
+      </div>
+      <div class="mood-result" id="moodResult" aria-live="polite" hidden>
+        <div class="result-copy"><span class="result-kicker">YOUR MOOD MATCH ✨</span><h3 id="resultTitle">Something sweet is coming...</h3><p id="resultDescription"></p><div class="result-meta"><span id="resultTime">⏱ 25 min</span><span id="resultDifficulty">♡ Easy</span></div><button class="button button-primary" id="viewRecipe">Show me the recipe <span>→</span></button></div>
+        <div class="result-image"><img id="resultImage" src="" alt="Recommended baked treat"><span class="result-badge">picked for you ♡</span></div>
+      </div>
+    </section>
+
+    <section class="ingredient-section section-pad" id="how-it-works">
+      <div class="ingredient-copy">
+        <div class="eyebrow">A LITTLE MAGIC, A FEW INGREDIENTS</div>
+        <h2>Your mood is the<br>starting <em>ingredient.</em></h2>
+        <p>Not sure what to bake? Tell us what you have at home and we'll help you find a sweet idea. No fancy pantry required.</p>
+        <div class="ingredient-form">
+          <label for="ingredients">What's in your kitchen?</label>
+          <div class="input-row"><input id="ingredients" type="text" placeholder="e.g. flour, eggs, chocolate" /><button class="button button-dark" id="ingredientSearch">Find a recipe ↗</button></div>
+          <small>Try typing ingredients separated by commas.</small>
+          <p class="ingredient-feedback" id="ingredientFeedback" aria-live="polite"></p>
+        </div>
+      </div>
+      <div class="ingredient-visual">
+        <img src="https://images.unsplash.com/photo-1556217477-d325251ece38?auto=format&fit=crop&w=900&q=85" alt="Baking ingredients arranged on a kitchen table" />
+        <div class="ingredient-note"><span>✿</span><div><strong>Use what you have</strong><small>Little bakes, less waste.</small></div></div>
+      </div>
+    </section>
+
+    <section class="recipes-section section-pad" id="recipes">
+      <div class="section-heading split-heading">
+        <div><div class="eyebrow">A FEW CROWD-PLEASERS</div><h2>Fresh from the <em>oven.</em></h2></div>
+        <p>Sweet little recipes for the days that need them. Choose one and let the kitchen do its thing.</p>
+      </div>
+      <div class="recipe-grid">
+        <article class="recipe-card">
+          <div class="recipe-photo"><img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=800&q=85" alt="Rich chocolate brownies"><span class="recipe-tag">For the comfort-seekers</span><button class="save-recipe" aria-label="Save Chocolate Brownies" data-save="brownies">♡</button></div>
+          <div class="recipe-info"><div class="recipe-title-row"><h3>Chocolate Brownies</h3><span>♡</span></div><p>Fudgy, rich, and basically a hug in dessert form.</p><div class="recipe-meta"><span>⏱ 35 min</span><span>Easy peasy</span><button class="recipe-open" data-recipe="brownies">Recipe ↗</button></div></div>
+        </article>
+        <article class="recipe-card">
+          <div class="recipe-photo"><img src="https://images.unsplash.com/photo-1486427944299-d1955d23e34d?auto=format&fit=crop&w=800&q=85" alt="Strawberry frosted cupcakes"><span class="recipe-tag">For the sunny souls</span><button class="save-recipe" aria-label="Save Strawberry Cupcakes" data-save="cupcakes">♡</button></div>
+          <div class="recipe-info"><div class="recipe-title-row"><h3>Strawberry Cupcakes</h3><span>♡</span></div><p>Bright, fluffy little treats for your happiest moments.</p><div class="recipe-meta"><span>⏱ 30 min</span><span>Easy</span><button class="recipe-open" data-recipe="cupcakes">Recipe ↗</button></div></div>
+        </article>
+        <article class="recipe-card">
+          <div class="recipe-photo"><img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=800&q=85" alt="Freshly baked chocolate chip cookies"><span class="recipe-tag">For the low-energy days</span><button class="save-recipe" aria-label="Save Chocolate Chip Cookies" data-save="cookies">♡</button></div>
+          <div class="recipe-info"><div class="recipe-title-row"><h3>Chocolate Chip Cookies</h3><span>♡</span></div><p>Simple, familiar, and made for a soft reset.</p><div class="recipe-meta"><span>⏱ 25 min</span><span>Easy</span><button class="recipe-open" data-recipe="cookies">Recipe ↗</button></div></div>
+        </article>
+      </div>
+      <div class="saved-note" id="savedNote" aria-live="polite">Tap ♡ on a recipe to save it to your little recipe box.</div>
+    </section>
+
+    <section class="timer-section">
+      <div class="timer-copy"><div class="eyebrow">BAKE, BREATHE, REPEAT</div><h2>Good things take<br><em>a little time.</em></h2><p>Set a timer, take a breath, and let the oven work its magic. You've got this.</p></div>
+      <div class="timer-widget"><span class="timer-label">YOUR LITTLE OVEN TIMER</span><div class="timer-display" id="timerDisplay">25:00</div><div class="timer-controls"><button class="button button-primary" id="timerStart">Start timer ▶</button><button class="timer-reset" id="timerReset">Reset ↺</button></div><div class="timer-presets"><button data-minutes="10">10 min</button><button data-minutes="25" class="active">25 min</button><button data-minutes="35">35 min</button></div><small id="timerMessage" aria-live="polite">A tiny reminder: check your bake as you go!</small></div>
+    </section>
+
+    <section class="about-section section-pad" id="about">
+      <div class="about-illustration"><div class="about-circle">BAKE<br><span>♡</span><br>WITH LOVE</div><span class="about-sparkle">✳</span><span class="about-heart">♡</span></div>
+      <div class="about-copy"><div class="eyebrow">A NOTE FROM OUR LITTLE KITCHEN</div><h2>Because feelings<br>deserve <em>sprinkles, too.</em></h2><p>Bake Your Mood started with a simple thought: baking can be more than following a recipe. It can be a celebration, a comfort, a creative break, or a reason to slow down.</p><p>We're here to make choosing your next bake feel as lovely as eating it. Whatever today looks like, there's a little sweetness waiting for you.</p><a href="#mood-finder" class="text-link">Find your next happy bake <span>→</span></a></div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><a class="brand footer-brand" href="#home"><span class="brand-icon">♡</span><span>Bake Your <em>Mood</em></span></a><p>Bake what you feel. Share what you bake.</p><div class="footer-bottom"><span>© 2026 Bake Your Mood</span><span>Made with a little sugar & a lot of heart ♡</span><a href="#home">Back to top ↑</a></div></footer>
+
+  <dialog class="recipe-dialog" id="recipeDialog">
+    <button class="dialog-close" id="dialogClose" aria-label="Close recipe">×</button>
+    <div class="dialog-content"><span class="eyebrow" id="dialogKicker">YOUR MOOD MATCH</span><h2 id="dialogTitle">Chocolate Brownies</h2><p id="dialogIntro"></p><div class="dialog-columns"><div><h3>Ingredients</h3><ul id="dialogIngredients"></ul></div><div><h3>Little steps</h3><ol id="dialogSteps"></ol></div></div><p class="dialog-disclaimer">A beginner-friendly recipe idea. Check your oven and adjust baking time as needed.</p></div>
+  </dialog>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="script.js"></script>
+</body>
+</html>
